@@ -6,4 +6,4 @@ COPY ./ /app
 
 RUN go mod download
 RUN go build
-ENTRYPOINT ./awesomeProject
+ENTRYPOINT ./vkTest2
