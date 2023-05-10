@@ -17,6 +17,15 @@ func (DB *DB) init(dbName string) error {
 		return err
 	}
 
+	_, err = DB.db.Exec("CREATE TABLE IF NOT EXISTS messages(user_id INTEGER NOT NULL, service_name TEXT NOT NULL, login TEXT NOT NULL, password TEXT NOT NULL, add_date INTEGER NOT NULL, CONSTRAINT new_pk PRIMARY KEY (user_id, service_name));")
+	if err != nil {
+		return err
+	}
+	_, err = DB.db.Exec("CREATE TABLE IF NOT EXISTS messages_for_delete(id INTEGER PRIMARY KEY AUTOINCREMENT, chat_id INTEGER, message_id INTEGER, add_date BIGINT);")
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 

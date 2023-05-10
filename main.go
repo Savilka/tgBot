@@ -21,7 +21,7 @@ func main() {
 	}
 
 	DB := DB{}
-	err = DB.init("new_file.db")
+	err = DB.init("test.db")
 	if err != nil {
 		panic(err)
 	}
