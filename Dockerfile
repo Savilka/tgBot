@@ -10,3 +10,4 @@ RUN sqlite3 test.db
 RUN go mod download
 RUN go build
 ENTRYPOINT ./vkTest2
+EXPOSE 8080/tcp
